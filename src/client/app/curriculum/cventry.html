@@ -1,0 +1,10 @@
+<div class="cventry">
+    <div>{{entry.time}}</div>
+    <div>{{entty.position}}</div>
+    <div>Firma: {{entry.company}}, {{entry.place}}</div>
+    <div class="description">{{entry.description}}</div>
+    <div>
+        <button ng-repeat="kwd in entry.keywords" class="btn btn-default btn-info">{{kwd}}</button>
+    </div>
+
+</div>

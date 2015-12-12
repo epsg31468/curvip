@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide { display: none!important; }
+    </style>
+    <title>curvip</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <base href="/">
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+
+</head>
+<body">
+    <h1>{{cv.firstname}} {{cv.lastname}}</h1>
+    <div>Aktualisiert: {{cv.header.updated}}</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10"> Left
+            </div>
+
+            <div class="col-md-2">
+                <img href="images/bjoern-hoefling_scaled.jpg" alt="Björn Höfling" class="img-responsive img-rounded></img>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <div>Kontakt:</div>
+        <div><span class="glyphicon glyphicon-home"></span></div>
+        <ul>
+            <li ng-repeat="addrline in header.address">{{addrline}}</li>
+        </ul>
+        <div><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;{{cv.header.mobile}}</div>
+        <div><span class="glyphicon glyphicon-envelope aria-hidden="true"></span>&nbsp;{{cv.header.email}}</div>
+<div><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a href="{{cv.header.web}}">{{cv.header.web}}</a></div>
+<!--<a href="{{'mailto:' + cv.header.email}}"-->
+
+    <h2>Projekte:</h2>
+    <ul>
+        <li ng-repeat="person in cv.persons">{{person.name}}</li>
+    </ul>
+
+    <cventry ng-repeat="xxx in cv.cvitems" entry="xxx"></cventry>
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/admin/admin.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/src/client/app/blocks/router/router.module.js"></script>
+    <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/curriculum/curriculum.module.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.module.js"></script>
+    <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/admin/admin.controller.js"></script>
+    <script src="/src/client/app/admin/admin.route.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.js"></script>
+    <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/core/config.js"></script>
+    <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/dataservice.js"></script>
+    <script src="/src/client/app/curriculum/curriculum.controller.js"></script>
+    <script src="/src/client/app/curriculum/curriculum.service.js"></script>
+    <script src="/src/client/app/curriculum/cventry.directive.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.route.js"></script>
+    <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
+    <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
+    <script src="/src/client/app/layout/shell.controller.js"></script>
+    <script src="/src/client/app/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
+    <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

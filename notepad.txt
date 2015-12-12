@@ -1,0 +1,18 @@
+                    description:'Analyse, Entwicklung und Dokumentation eines WebServices zur Address- und Anschlussverwaltung (Technologien: JAX-WS, Spring, Hibernate, Tomcat, Oracle-Datenbank, Oracle Spatial,
+ PL/SQL-Programmierung, JUnit, SoapUI, ClearCase, ClearQuest, Jira, TomTom Multinet Adressdaten, Deutsche Telekom Addressmaster, WITA-Schittstelle, Deutsche Post DataFactory Street).
+\\ \\ Migration des SCM-Systems von CVS nach git, Anbindung an Jenkins.
+\\ \\ Arbeit in einem internationalem Umfeld, Teilnahme am täglichen Scrum of Scrums.
+\\ \\ 3rd-Level-Support bestehender Systeme.'
+
+
+
+    <br>
+    <div ngrepeat="i in cv.cvitems">
+        <cventry entry="i"></cvitem>
+        <!-- mv.cvitems[0]" -->
+    </div>
+
+<!--    <cvitem entry="cv.tfo"></cvitem>
+    <cventry></cventry>
+    <cventryX></cventryX>
+-->
